@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="./style.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css"/>
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.js" integrity="sha256-HwWONEZrpuoh951cQD1ov2HUK5zA5DwJ1DNUXaM6FsY=" crossorigin="anonymous"></script>
+
+    <title>To Do List</title>
+  </head>
+  <body>
+
+    <h1 class="title">To Do List</h1>
+
+    <div class="todo-list">
+      <div class="tasks">
+        <div class="list-head">
+            <div class="input-and-save-div">
+                <input type="text" class="entered-list" placeholder="Task Title..." />
+                <button class="timer-btn"><i class="fa-solid fa-clock fa-xl"></i></button>
+                <button class="save-btn" onclick="saveTask()"><i class="fa-solid fa-plus fa-xl"></i></button>
+            </div>
+            <input type="text" class="description-input" name="" id="" placeholder="Task Description...">
+          <table>
+            <tr id="upcoming-tasks" class="flex-tasks">
+            </tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div id="timer-modal" class="modal hidden">
+      <div>
+        <form action="" class="flex-tasks jc" id="formid">
+          <div>
+            <label for="mins">Minutes (between 0 and 59):</label>
+            <input type="number" name="mins" id="mins" min="0" max="59">
+          </div>
+          <div>
+            <button id="timer-submit" class="modal-btn" type="submit">
+              Add Timer
+            </button>
+            <button class="modal-btn">
+              Cancel
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
