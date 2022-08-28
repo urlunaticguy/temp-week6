@@ -14,6 +14,7 @@ let arrUpco = []; //array of keys - upcoming tasks for localStorage
 let arrComp = []; //array of keys - completed tasks for localStorage
 let i = 0;
 let timerMins = 0, counter = -1;
+let timerOpened = false;
 
 // localStorage.clear();
 
@@ -80,6 +81,10 @@ function makeTaskCompleted(qq) {
 
 function saveTask() {
     console.log("task saved");
+    if (timerOpened == false) {
+        timerMins = 0;
+    }
+    timerOpened = false;
     let totalTime = 0;
     totalTime = (timerMins * 60);
     let showTime = totalTime + 's';
@@ -128,6 +133,9 @@ $("#timer-submit").on("click", function(event) {
     counter++;
     event.preventDefault();
     timerMins = ($('#mins').val());
+    if (timerMins > 0) {
+        timerOpened = true;
+    }
     // $("#mins").value = '';
     console.log("Timer in Mins ", timerMins);
     // $('#mins').val(0);
